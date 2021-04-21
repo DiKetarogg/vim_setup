@@ -1,4 +1,7 @@
 
+"Author: DiKetarogg
+"Highlighting for .scs files
+
 syn keyword scsSystemStatement scp_program scp_procedure agent_scp_program active_agent_scp_program rrel_params rrel_operators rrel_init rrel_in rrel_out rrel_fixed rrel_assign rrel_erase nrel_goto nrel_then nrel_else scp_operator scp_operator_executable_after_one_of_previous scp_operator_executable_after_all_previous genEl genElStr3 genElStr5 sys_gen eraseEl eraseElStr3 eraseElStr5 searchElStr3 searchElStr5 eraseSetStr3 eraseSetStr5 searchSetStr3 searchSetStr5 sys_search ifType ifVarAssign ifFormCont ifCoin ifEq ifGr   sys_wait call waitReturn waitReturnSet return varAssign varErase   synchronize 
 
 syn keyword scsFunction contAdd contSub contMul contDiv contPow contLn contSin contCos contTg contASin contACos contATg contAssign contErase  print printNl printEl  stringToUpperCase stringToLowerCase stringReplace stringEndsWith stringSlice stringSub stringLen stringSplit stringIfGr stringIfEq contConcat
