@@ -31,6 +31,8 @@ syn match scsSpecial '\\[nvt]' contained
 " Regular number
 syn match scsNumber '\d\+' contained display
 
+syn region scsStringLiteral start='\"' end='\"' contains=scsSpecial
+
 syn region scsIdentifier start='\[\(\*\)\@!' end='\]' contains=scsSpecial
 
 
@@ -40,6 +42,7 @@ hi def link scsComment			Comment
 hi def link scsSystemStatement		Statement
 hi def link scsOperator			Statement
 hi def link scsNumber			Constant
+hi def link scsStringLiteral		Constant
 hi def link scsIdentifier		Identifier
 hi def link scsFunction			Identifier
 hi def link scsSpecial			Special
