@@ -6,16 +6,19 @@ syn keyword scsSystemStatement scp_program scp_procedure agent_scp_program activ
 
 syn keyword scsFunction contAdd contSub contMul contDiv contPow contLn contSin contCos contTg contASin contACos contATg contAssign contErase  print printNl printEl  stringToUpperCase stringToLowerCase stringReplace stringEndsWith stringSlice stringSub stringLen stringSplit stringIfGr stringIfEq contConcat
 
-syn match scsOperator "[-=]>"
-syn match scsOperator "<[-=]>\="
+syn match scsOperator "[-=]|\=>"
+syn match scsOperator "<|\=[-=]"
+syn match scsOperator "<|\=[-=]|\=>"
 syn match scsOperator ':'
 syn match scsOperator ';;'
 syn match scsOperator '\.\.\.'
 
-syn keyword scsType rrel_scp_const rrel_scp_var nrel_scp_var_value rrel_const rrel_var rrel_node rrel_arc rrel_link rrel_common rrel_access rrel_pos rrel_neg rrel_fuz rrel_temp rrel_perm rrel_pos_const_perm rrel_set
+syn keyword scpType rrel_scp_const rrel_scp_var nrel_scp_var_value rrel_const rrel_var rrel_node rrel_arc rrel_link rrel_common rrel_access rrel_pos rrel_neg rrel_fuz rrel_temp rrel_perm rrel_pos_const_perm rrel_set
 
-syn match scsType 'rrel_[0-9]\+' contains=scsNumber
-syn match scsType 'rrel_set_[0-9]\+' contains=scsNumber
+syn match scpType 'rrel_[0-9]\+' contains=scsNumber
+syn match scpType 'rrel_set_[0-9]\+' contains=scsNumber
+
+syn keyword scsType non_atomic_section subject_domain sc_node_not_relation sc_node_norole_relation sc_node_not_relation sc_node_role_relation
 
 syn keyword scsTodo TODO FIXME XXX NOTE contained
 
@@ -37,6 +40,7 @@ syn region scsIdentifier start='\[\(\*\)\@!' end='\]' contains=scsSpecial
 
 
 hi def link scsTodo			Todo
+hi def link scpType			Type
 hi def link scsType			Type
 hi def link scsComment			Comment
 hi def link scsSystemStatement		Statement
